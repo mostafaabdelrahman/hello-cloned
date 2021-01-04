@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: echo "hello world output" > output.txt
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /tmp
           paths:
             - output.txt
   print_output_file:
@@ -20,8 +20,8 @@ jobs:
       - image: cimg/base:2020.01
     steps:
       - attach_workspace:
-          at: /tmp/workspace
-      - run: cat /tmp/workspace/output.txt
+          at: /tmp
+      - run: cat /tmp/output.txt
   # print_hello:
   #   docker:
   #     - image: circleci/node:13.8.0
