@@ -16,6 +16,11 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo "world"
+  print_owner:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: echo $owner
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
